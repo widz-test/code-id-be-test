@@ -1,0 +1,44 @@
+{
+  "name": "ms-widya-test",
+  "version": "1.0.0",
+  "description": "Assessment test for PT Surya Digital Teknologi",
+  "main": "index.js",
+  "scripts": {
+    "test": "cross-env NODE_ENV=test jest --testTimeout=10000",
+    "start": "nodemon --watch './**/*.ts' --exec 'ts-node' ./src/server.ts",
+    "migration:create": "node --require ts-node/register ./node_modules/typeorm/cli.js migration:create",
+    "migration:run": "node --require ts-node/register ./node_modules/typeorm/cli.js -d ./src/lib/database/mysql/MainDataSource.ts migration:run"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://widz11: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@github.com/widz11/widya-betest.git"
+  },
+  "author": "Widya",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/widz11/widya-betest/issues"
+  },
+  "homepage": "https://github.com/widz11/widya-betest#readme",
+  "dependencies": {
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.11.20",
+    "axios": "^1.6.7",
+    "dotenv": "^16.4.5",
+    "express": "^4.18.2",
+    "ioredis": "^5.4.1",
+    "moment-timezone": "^0.5.45",
+    "mongodb": "^6.5.0",
+    "mongoose": "^8.3.2",
+    "nodemon": "^3.1.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.5.12",
+    "@types/supertest": "^6.0.2",
+    "cross-env": "^7.0.3",
+    "jest": "^29.7.0",
+    "supertest": "^6.3.4",
+    "ts-jest": "^29.1.2"
+  }
+}
