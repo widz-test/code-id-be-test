@@ -1,10 +1,12 @@
 import { NextFunction, Request, Response } from "express";
 import * as express from "express";
 import { UserController } from "../../../user/controller/UserController";
+import { TokenRouteMiddleware } from "../../../token/middleware/route/TokenRouteMiddleware";
 const router = express.Router();
 
 router.get(
 	"/",
+	[TokenRouteMiddleware.handle],
 	async function (req: Request, res: Response, next: NextFunction) {
 		try {
             let payload = req.body;
@@ -33,6 +35,7 @@ router.post(
 
 router.put(
 	"/",
+	[TokenRouteMiddleware.handle],
 	async function (req: Request, res: Response, next: NextFunction) {
 		try {
             let payload = req.body;
@@ -47,6 +50,7 @@ router.put(
 
 router.delete(
 	"/",
+	[TokenRouteMiddleware.handle],
 	async function (req: Request, res: Response, next: NextFunction) {
 		try {
             let payload = req.body;
@@ -61,6 +65,7 @@ router.delete(
 
 router.get(
 	"/:id",
+	[TokenRouteMiddleware.handle],
 	async function (req: Request, res: Response, next: NextFunction) {
 		try {
             let payload = req.body;

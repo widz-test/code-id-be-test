@@ -15,7 +15,7 @@ Assessment Techincal Test for Code ID
   cd ms-widya-betest
 ```
 
-3. Setup env database
+3. Setup env
 
 ```bash
   cp enc-example .env
