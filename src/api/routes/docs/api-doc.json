@@ -1,0 +1,795 @@
+{
+    "openapi": "3.0.1",
+    "info": {
+      "title": "Test",
+      "description": "",
+      "version": "1.0.0"
+    },
+    "tags": [
+      {
+        "name": "CodeID"
+      }
+    ],
+    "paths": {
+      "/v1/user": {
+        "get": {
+          "summary": "User List",
+          "x-apidog-folder": "CodeID",
+          "x-apidog-status": "developing",
+          "deprecated": false,
+          "description": "",
+          "tags": [
+            "CodeID"
+          ],
+          "parameters": [
+            {
+              "name": "Authorization",
+              "in": "header",
+              "description": "",
+              "required": true,
+              "example": "Bearer {{token}}",
+              "schema": {
+                "type": "string"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "OK",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "object",
+                    "properties": {
+                      "status": {
+                        "type": "boolean"
+                      },
+                      "service": {
+                        "type": "string"
+                      },
+                      "message": {
+                        "type": "string"
+                      },
+                      "data": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "id": {
+                              "type": "string"
+                            },
+                            "email": {
+                              "type": "string"
+                            },
+                            "username": {
+                              "type": "string"
+                            },
+                            "identity_number": {
+                              "type": "string"
+                            },
+                            "account_number": {
+                              "type": "string"
+                            }
+                          },
+                          "x-apidog-ignore-properties": [],
+                          "x-apidog-orders": [
+                            "id",
+                            "email",
+                            "username",
+                            "identity_number",
+                            "account_number"
+                          ]
+                        }
+                      },
+                      "created_at": {
+                        "type": "integer"
+                      }
+                    },
+                    "required": [
+                      "status",
+                      "service",
+                      "message",
+                      "data",
+                      "created_at"
+                    ],
+                    "x-apidog-ignore-properties": [],
+                    "x-apidog-orders": [
+                      "status",
+                      "service",
+                      "message",
+                      "data",
+                      "created_at"
+                    ]
+                  },
+                  "examples": {
+                    "1": {
+                      "summary": "Success",
+                      "value": {
+                        "status": true,
+                        "service": "service",
+                        "message": "Successfully",
+                        "data": [
+                          {
+                            "id": "662b5f33a7c33e2e7c20acc7",
+                            "email": "john2@test.xxx",
+                            "username": "john_2",
+                            "identity_number": "XXX02",
+                            "account_number": "002"
+                          }
+                        ],
+                        "created_at": 1714129556583
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "x-run-in-apidog": "https://apidog.com/web/project/520001/apis/api-6939042-run"
+        },
+        "post": {
+          "summary": "Create User",
+          "x-apidog-folder": "CodeID",
+          "x-apidog-status": "developing",
+          "deprecated": false,
+          "description": "",
+          "tags": [
+            "CodeID"
+          ],
+          "parameters": [],
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "email": {
+                      "type": "string"
+                    },
+                    "username": {
+                      "type": "string"
+                    },
+                    "identity_number": {
+                      "type": "string"
+                    },
+                    "account_number": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "email",
+                    "username",
+                    "identity_number",
+                    "account_number"
+                  ],
+                  "x-apidog-ignore-properties": [],
+                  "x-apidog-orders": [
+                    "email",
+                    "username",
+                    "identity_number",
+                    "account_number"
+                  ]
+                },
+                "example": {
+                  "email": "john2@test.xxx",
+                  "username": "john_2",
+                  "identity_number": "XXX02",
+                  "account_number": "002"
+                }
+              }
+            }
+          },
+          "responses": {
+            "200": {
+              "description": "OK",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "object",
+                    "properties": {
+                      "status": {
+                        "type": "boolean"
+                      },
+                      "service": {
+                        "type": "string"
+                      },
+                      "message": {
+                        "type": "string"
+                      },
+                      "data": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string"
+                          },
+                          "email": {
+                            "type": "string"
+                          },
+                          "username": {
+                            "type": "string"
+                          },
+                          "identity_number": {
+                            "type": "string"
+                          },
+                          "account_number": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "id",
+                          "email",
+                          "username",
+                          "identity_number",
+                          "account_number"
+                        ],
+                        "x-apidog-ignore-properties": [],
+                        "x-apidog-orders": [
+                          "id",
+                          "email",
+                          "username",
+                          "identity_number",
+                          "account_number"
+                        ]
+                      },
+                      "created_at": {
+                        "type": "integer"
+                      }
+                    },
+                    "required": [
+                      "status",
+                      "service",
+                      "message",
+                      "data",
+                      "created_at"
+                    ],
+                    "x-apidog-ignore-properties": [],
+                    "x-apidog-orders": [
+                      "status",
+                      "service",
+                      "message",
+                      "data",
+                      "created_at"
+                    ]
+                  },
+                  "examples": {
+                    "1": {
+                      "summary": "Success",
+                      "value": {
+                        "status": true,
+                        "service": "service",
+                        "message": "Successfully",
+                        "data": {
+                          "id": "662b5f33a7c33e2e7c20acc7",
+                          "email": "john2@test.xxx",
+                          "username": "john_2",
+                          "identity_number": "XXX02",
+                          "account_number": "002"
+                        },
+                        "created_at": 1714118451656
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "x-run-in-apidog": "https://apidog.com/web/project/520001/apis/api-6939047-run"
+        },
+        "put": {
+          "summary": "Update user",
+          "x-apidog-folder": "CodeID",
+          "x-apidog-status": "developing",
+          "deprecated": false,
+          "description": "",
+          "tags": [
+            "CodeID"
+          ],
+          "parameters": [
+            {
+              "name": "Authorization",
+              "in": "header",
+              "description": "",
+              "required": true,
+              "example": "Bearer {{token}}",
+              "schema": {
+                "type": "string"
+              }
+            }
+          ],
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "email": {
+                      "type": "string"
+                    },
+                    "username": {
+                      "type": "string"
+                    },
+                    "identity_number": {
+                      "type": "string"
+                    },
+                    "account_number": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "email",
+                    "username",
+                    "identity_number",
+                    "account_number"
+                  ],
+                  "x-apidog-ignore-properties": [],
+                  "x-apidog-orders": [
+                    "id",
+                    "email",
+                    "username",
+                    "identity_number",
+                    "account_number"
+                  ]
+                },
+                "example": {
+                  "id": "662b301f24e1462950bd3e40",
+                  "email": "john2@test.xxx",
+                  "username": "john_2",
+                  "identity_number": "XXX02",
+                  "account_number": "002"
+                }
+              }
+            }
+          },
+          "responses": {
+            "200": {
+              "description": "OK",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "object",
+                    "properties": {
+                      "status": {
+                        "type": "boolean"
+                      },
+                      "service": {
+                        "type": "string"
+                      },
+                      "message": {
+                        "type": "string"
+                      },
+                      "data": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string"
+                          },
+                          "email": {
+                            "type": "string"
+                          },
+                          "username": {
+                            "type": "string"
+                          },
+                          "identity_number": {
+                            "type": "string"
+                          },
+                          "account_number": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "id",
+                          "email",
+                          "username",
+                          "identity_number",
+                          "account_number"
+                        ],
+                        "x-apidog-ignore-properties": [],
+                        "x-apidog-orders": [
+                          "id",
+                          "email",
+                          "username",
+                          "identity_number",
+                          "account_number"
+                        ]
+                      },
+                      "created_at": {
+                        "type": "integer"
+                      }
+                    },
+                    "required": [
+                      "status",
+                      "service",
+                      "message",
+                      "data",
+                      "created_at"
+                    ],
+                    "x-apidog-ignore-properties": [],
+                    "x-apidog-orders": [
+                      "status",
+                      "service",
+                      "message",
+                      "data",
+                      "created_at"
+                    ]
+                  },
+                  "examples": {
+                    "1": {
+                      "summary": "Success",
+                      "value": {
+                        "status": true,
+                        "service": "service",
+                        "message": "Successfully",
+                        "data": {
+                          "id": "662b301f24e1462950bd3e40",
+                          "email": "john2@test.xxx",
+                          "username": "john_2",
+                          "identity_number": "XXX02",
+                          "account_number": "002"
+                        },
+                        "created_at": 1714118153757
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "x-run-in-apidog": "https://apidog.com/web/project/520001/apis/api-6940579-run"
+        },
+        "delete": {
+          "summary": "Delete user",
+          "x-apidog-folder": "CodeID",
+          "x-apidog-status": "developing",
+          "deprecated": false,
+          "description": "",
+          "tags": [
+            "CodeID"
+          ],
+          "parameters": [
+            {
+              "name": "Authorization",
+              "in": "header",
+              "description": "",
+              "required": true,
+              "example": "Bearer {{token}}",
+              "schema": {
+                "type": "string"
+              }
+            }
+          ],
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "id"
+                  ],
+                  "x-apidog-ignore-properties": [],
+                  "x-apidog-orders": [
+                    "id"
+                  ]
+                },
+                "example": {
+                  "id": "662b5f2ca7c33e2e7c20acc1"
+                }
+              }
+            }
+          },
+          "responses": {
+            "422": {
+              "description": "Parameter Error",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "object",
+                    "properties": {
+                      "status": {
+                        "type": "boolean"
+                      },
+                      "service": {
+                        "type": "string"
+                      },
+                      "code": {
+                        "type": "integer"
+                      },
+                      "error_code": {
+                        "type": "string"
+                      },
+                      "message": {
+                        "type": "string"
+                      },
+                      "data": {
+                        "type": "object",
+                        "properties": {},
+                        "x-apidog-ignore-properties": [],
+                        "x-apidog-orders": []
+                      },
+                      "created_at": {
+                        "type": "integer"
+                      }
+                    },
+                    "required": [
+                      "status",
+                      "service",
+                      "code",
+                      "error_code",
+                      "message",
+                      "data",
+                      "created_at"
+                    ],
+                    "x-apidog-ignore-properties": [],
+                    "x-apidog-orders": [
+                      "status",
+                      "service",
+                      "code",
+                      "error_code",
+                      "message",
+                      "data",
+                      "created_at"
+                    ]
+                  }
+                }
+              }
+            }
+          },
+          "x-run-in-apidog": "https://apidog.com/web/project/520001/apis/api-6940834-run"
+        }
+      },
+      "/v1/user/{id}": {
+        "get": {
+          "summary": "User Detail",
+          "x-apidog-folder": "CodeID",
+          "x-apidog-status": "developing",
+          "deprecated": false,
+          "description": "",
+          "tags": [
+            "CodeID"
+          ],
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "description": "",
+              "required": true,
+              "example": "662b5f33a7c33e2e7c20accs",
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "Authorization",
+              "in": "header",
+              "description": "",
+              "required": true,
+              "example": "Bearer {{token}}",
+              "schema": {
+                "type": "string"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "OK",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "object",
+                    "properties": {
+                      "status": {
+                        "type": "boolean"
+                      },
+                      "service": {
+                        "type": "string"
+                      },
+                      "message": {
+                        "type": "string"
+                      },
+                      "data": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string"
+                          },
+                          "email": {
+                            "type": "string"
+                          },
+                          "username": {
+                            "type": "string"
+                          },
+                          "identity_number": {
+                            "type": "string"
+                          },
+                          "account_number": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "id",
+                          "email",
+                          "username",
+                          "identity_number",
+                          "account_number"
+                        ],
+                        "x-apidog-ignore-properties": [],
+                        "x-apidog-orders": [
+                          "id",
+                          "email",
+                          "username",
+                          "identity_number",
+                          "account_number"
+                        ]
+                      },
+                      "created_at": {
+                        "type": "integer"
+                      }
+                    },
+                    "required": [
+                      "status",
+                      "service",
+                      "message",
+                      "data",
+                      "created_at"
+                    ],
+                    "x-apidog-ignore-properties": [],
+                    "x-apidog-orders": [
+                      "status",
+                      "service",
+                      "message",
+                      "data",
+                      "created_at"
+                    ]
+                  },
+                  "examples": {
+                    "1": {
+                      "summary": "Success",
+                      "value": {
+                        "status": true,
+                        "service": "service",
+                        "message": "Successfully",
+                        "data": {
+                          "id": "662b5f33a7c33e2e7c20acc7",
+                          "email": "john2@test.xxx",
+                          "username": "john_2",
+                          "identity_number": "XXX02",
+                          "account_number": "002"
+                        },
+                        "created_at": 1714125133549
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "x-run-in-apidog": "https://apidog.com/web/project/520001/apis/api-6941132-run"
+        }
+      },
+      "/v1/token": {
+        "post": {
+          "summary": "Token",
+          "x-apidog-folder": "CodeID",
+          "x-apidog-status": "developing",
+          "deprecated": false,
+          "description": "",
+          "tags": [
+            "CodeID"
+          ],
+          "parameters": [],
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "id"
+                  ],
+                  "x-apidog-ignore-properties": [],
+                  "x-apidog-orders": [
+                    "id"
+                  ]
+                },
+                "example": {
+                  "id": "xxx02"
+                }
+              }
+            }
+          },
+          "responses": {
+            "200": {
+              "description": "OK",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "object",
+                    "properties": {
+                      "status": {
+                        "type": "boolean"
+                      },
+                      "service": {
+                        "type": "string"
+                      },
+                      "message": {
+                        "type": "string"
+                      },
+                      "data": {
+                        "type": "object",
+                        "properties": {
+                          "token": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "token"
+                        ],
+                        "x-apidog-ignore-properties": [],
+                        "x-apidog-orders": [
+                          "token"
+                        ]
+                      },
+                      "created_at": {
+                        "type": "integer"
+                      }
+                    },
+                    "required": [
+                      "status",
+                      "service",
+                      "message",
+                      "data",
+                      "created_at"
+                    ],
+                    "x-apidog-ignore-properties": [],
+                    "x-apidog-orders": [
+                      "status",
+                      "service",
+                      "message",
+                      "data",
+                      "created_at"
+                    ]
+                  },
+                  "examples": {
+                    "1": {
+                      "summary": "Success",
+                      "value": {
+                        "status": true,
+                        "service": "service",
+                        "message": "Successfully",
+                        "data": {
+                          "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MmI1ZjMzYTdjMzNlMmU3YzIwYWNjNyIsImlhdCI6MTcxNDEyOTU0MiwiZXhwIjoxNzE0MTI5NjAyfQ.mrdDGKLuvs9UKVVNcIUdCiHNc0paugSLxubMIh_5IS0"
+                        },
+                        "created_at": 1714129542709
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "x-run-in-apidog": "https://apidog.com/web/project/520001/apis/api-6944899-run"
+        }
+      }
+    },
+    "components": {
+      "schemas": {}
+    },
+    "servers": [
+      {
+        "url": "",
+        "description": "Testing Env"
+      }
+    ]
+  }
