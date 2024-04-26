@@ -61,6 +61,9 @@ export class RequestValidation {
 		rules.forEach((e) => {
 			const type = this.getValidationType(e);
 			switch (type) {
+				case RequestValidation.required:
+                    Comparison.isUndefined(value)
+                    break;
 				case RequestValidation.numeric:
 					if (value) {
 						Comparison.isNumeric(value);

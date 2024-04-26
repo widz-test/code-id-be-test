@@ -1,3 +1,4 @@
+import { REQUEST_VALIDATION_NOT_NULL } from "../../exception/MessageException";
 import { Pattern } from "./Pattern";
 
 /**
@@ -22,6 +23,16 @@ export const MAX_FILE_SIZE: number = 3150000;
  * Comparison
  */
 export class Comparison {
+	/**
+     *
+     * @param value
+     */
+    static isUndefined(value: string | null) {
+        if (typeof value == "undefined" || value == "" || value == null) {
+            throw Error(REQUEST_VALIDATION_NOT_NULL.message);
+        }
+    }
+
 	/**
 	 *
 	 * @param value
