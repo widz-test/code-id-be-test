@@ -1,3 +1,5 @@
+import { MongooseConfig } from "./mongoose/MongooseConfig";
+
 /**
  * Class Database
  */
@@ -7,12 +9,12 @@ export class Database {
 	}
 
 	async closed() {
-		
+		await (new MongooseConfig).disconnect();
 	}
 
 	async openMainDataSource() {
 		try {
-			
+			await (new MongooseConfig).handle();
 		} catch (e) {
 			console.error(
 				"\u274C",
