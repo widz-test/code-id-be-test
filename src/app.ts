@@ -2,11 +2,11 @@
  * Module dependencies.
  */
 import { config } from "dotenv";
+config();
 import express, { Application, Request, Response, NextFunction } from "express";
 import bodyParser from "body-parser";
 import { Routes } from "./api/routes";
 import { Database } from "./lib/database/Database";
-config();
 
 /**
  * Class App

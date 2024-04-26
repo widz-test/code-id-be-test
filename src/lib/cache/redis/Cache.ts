@@ -1,4 +1,5 @@
 export const USER_CACHE = process.env.NODE_ENV + '/user';
+export const USER_CACHE_TIME = 10; // 10 seconds
 export const REDIS = {
 	host: process.env.REDIS_HOST,
 	port: process.env.REDIS_PORT,
@@ -8,7 +9,7 @@ export const REDIS = {
 		checkServerIdentity: () => undefined
 	}
 };
-let port: number = Number(process.env.REDIS_PORT) ?? 6379
+let port: number = Number(process.env.REDIS_PORT) ? Number(process.env.REDIS_PORT) : 6379;
 export const IO_REDIS = process.env.REDIS_SCHEME === 'ssl' ?  {
 	port						: port,
 	host						: process.env.REDIS_HOST,

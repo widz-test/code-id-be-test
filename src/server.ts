@@ -1,6 +1,6 @@
 import expressApp from './app';
 
-const port = process.env.PORT || 3000;
+const port = process.env.NODE_PORT || 3000;
 const app = expressApp.app;
 expressApp.run();
 app.listen(port, () => {
