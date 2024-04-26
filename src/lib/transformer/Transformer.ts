@@ -84,18 +84,22 @@ export class Transformer implements TransformerInterface {
 	 */
 	async setDataPaginated(
 		list: [],
-		pagination: []
-	): Promise<{ data: any; pagination: any }> {
+		pagination?: []
+	): Promise<any> {
 		const data = [];
 		if (list && list.length >= 0) {
 			for (const listItem of list) {
 				data.push(await this.setFormat(listItem));
 			}
 		}
-		return {
-			data,
-			pagination,
-		};
+		if (pagination) {
+			return {
+				data,
+				pagination,
+			};
+		} else {
+			return data;
+		}
 	}
 
 	/**
